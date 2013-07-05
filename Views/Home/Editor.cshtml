@@ -1,0 +1,50 @@
+﻿<div id="wrap" class="clearfix editor-pg">
+    <h3>
+        Add New Post / Edit Post</h3>
+    <div id="editor">
+        <div id="title-wrap">
+            <label class="hide-if-no-js" style="" id="title-prompt-text" for="title-editor">
+                Enter title here</label>
+            <input id="title-editor" class="ars" />
+        </div>
+        <textarea id="content-editor"></textarea>
+    </div>
+    <div id="sidebar">
+        <div class="widget">
+            <h5>
+                Publish</h5>
+            <p>
+                Status: <span id="post-status">Published</span> <a id="edit-post-status" href="#">Edit</a>
+                <a href="/Preview" id="previewOpen">Preview</a>
+            </p>
+            <hr />
+            <p>
+                Published on: <span id="post-date">Sep 12, 2012 &#64; 22:15</span> <a id="edit-post-date"
+                    href="#">Edit</a></p>
+            <hr />
+            <p class="clearfix">
+                <a id="delete-post" href="#">Move to Trash</a><a href="#" id="update-post">Update</a></p>
+        </div>
+        <div class="widget">
+            <h5>
+                Topics</h5>
+            <p>
+                Put things here
+            </p>
+            <hr />
+            <p>
+                Put things here</p>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script type="text/javascript" src="/assets/js/tiny_mce/jquery.tinymce.js"></script>
+    <script type="text/javascript" src="/assets/js/editor.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('nav').find('#create-post').addClass('active').removeAttr('href');
+        });
+    </script>
+
+}

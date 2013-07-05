@@ -1,0 +1,32 @@
+﻿@{
+    
+    Layout = "~/Views/Shared/_Preview.cshtml";
+}
+<div id="wrap" class="preview-wrap ars">
+<h3 id="preview-title"></h3>
+<div id="preview-text" class="ars"></div>
+</div>
+@section Scripts {
+<script>
+    $(function () {
+        sessionID = 'HGTV' + window.location.hash;
+        handleStorageChange();
+
+        if (window.addEventListener) {
+            window.addEventListener("storage", handleStorageChange, false);
+        }
+        else {
+            window.attachEvent("onstorage", handleStorageChange);
+        }
+
+        var blogPreview = {};
+
+        function handleStorageChange() {
+            blogPreview = JSON.parse(localStorage.getItem(sessionID));
+            $('#preview-title').html(blogPreview.title);
+            $('#preview-text').html(blogPreview.content);
+        }
+
+    });
+        </script>
+}
